@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InkDown — Markdown Editor</title>
+  <meta name="description" content="A beautiful split-pane Markdown editor with live preview, syntax highlighting, and instant formatting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Toolbar -->
+    <header class="toolbar">
+      <div class="toolbar-left">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span class="logo-text">InkDown</span>
+        </div>
+      </div>
+      <div class="toolbar-actions">
+        <button class="tb-btn" data-action="bold" title="Bold (Ctrl+B)"><strong>B</strong></button>
+        <button class="tb-btn" data-action="italic" title="Italic (Ctrl+I)"><em>I</em></button>
+        <button class="tb-btn" data-action="heading" title="Heading">#</button>
+        <button class="tb-btn" data-action="link" title="Link">🔗</button>
+        <button class="tb-btn" data-action="code" title="Code">&lt;/&gt;</button>
+        <button class="tb-btn" data-action="list" title="List">☰</button>
+        <button class="tb-btn" data-action="quote" title="Quote">❝</button>
+        <div class="tb-divider"></div>
+        <button class="tb-btn" data-action="download" title="Download">💾</button>
+        <button class="tb-btn" data-action="clear" title="Clear">🗑️</button>
+      </div>
+      <div class="toolbar-right">
+        <div class="word-count" id="word-count">0 words</div>
+      </div>
+    </header>
+
+    <!-- Editor Panes -->
+    <main class="editor-main">
+      <div class="pane pane-editor">
+        <div class="pane-header">
+          <span class="pane-label">Markdown</span>
+        </div>
+        <textarea id="editor" class="editor-textarea" placeholder="Start writing markdown..." spellcheck="false"></textarea>
+      </div>
+      <div class="divider-handle" id="divider-handle"></div>
+      <div class="pane pane-preview">
+        <div class="pane-header">
+          <span class="pane-label">Preview</span>
+        </div>
+        <div class="preview-content" id="preview"></div>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
